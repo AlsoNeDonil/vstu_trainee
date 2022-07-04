@@ -1,7 +1,7 @@
 
 #include "Set.h"
 
-Set::Set(std::vector<int> values)
+Set::Set(std::vector<std::string> values)
 {
 	for (auto it : values)
 	{
@@ -9,7 +9,7 @@ Set::Set(std::vector<int> values)
 	}
 }
 
-void Set::Add(int value)
+void Set::Add(std::string& value)
 {
 	if (!Exist(value))
 	{
@@ -18,9 +18,9 @@ void Set::Add(int value)
 	}
 }
 
-void Set::Delete(int value)
+void Set::Delete(std::string& value)
 {
-	std::vector<int>::iterator pos;
+	std::vector<std::string>::iterator pos;
 
 	for (pos = m_Values.begin(); pos != m_Values.end(); pos++)
 	{
@@ -32,7 +32,7 @@ void Set::Delete(int value)
 		m_Values.erase(pos);
 }
 
-bool Set::Exist(int value)
+bool Set::Exist(std::string& value)
 {
 	auto it = std::find(m_Values.begin(), m_Values.end(), value);
 	return (it != m_Values.end());
