@@ -11,7 +11,8 @@ public:
 	void Add(std::string& value);
 	void Delete(std::string& value);
 
-	std::string& GetByIndex(size_t index);
+	std::string GetByIndex(size_t index);
+	int GetByWord(std::string& word);
 	bool Exist(std::string& value);
 	void Merge(Set& other);
 	Set Intersect(Set& oher);

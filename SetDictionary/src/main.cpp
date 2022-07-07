@@ -1,14 +1,19 @@
 #include <iostream>
 #include <intrin.h>
 
-#include "Dict.h"
+#include "Translator.h"
 
 int main()
 {
-	Dict s1({"dima", "mama", "papa"});
-	Dict s2({ "dima", "mama", "ded" });
+	setlocale(LC_ALL, "Russian");
+	Translator t("assets/dict.txt");
 
-	auto tmp = s2.Intersect(s1);
+	std::string sentence1("Brother Mother Dima govno");
+	std::string sentence2("Mother jump in window");
 
+	std::cout << t.Translate(sentence1) << std::endl;
+	std::cout << t.Translate(sentence2) << std::endl;
+
+	system("pause");
 	return 0;
 }
