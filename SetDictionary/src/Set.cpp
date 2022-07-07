@@ -1,14 +1,6 @@
 
 #include "Set.h"
 
-Set::Set(std::vector<std::string> values)
-{
-	for (auto it : values)
-	{
-		Add(it);
-	}
-}
-
 void Set::Add(std::string& value)
 {
 	if (!Exist(value))
@@ -30,6 +22,14 @@ void Set::Delete(std::string& value)
 
 	if (pos != m_Values.end())
 		m_Values.erase(pos);
+}
+
+std::string& Set::GetByIndex(size_t index)
+{
+	if (index < m_Values.size())
+	{
+		return m_Values[index];
+	}
 }
 
 bool Set::Exist(std::string& value)

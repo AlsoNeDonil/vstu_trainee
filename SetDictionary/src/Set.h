@@ -7,11 +7,11 @@ class Set
 {
 public:
 	Set() = default;
-	Set(std::vector<std::string> values);
 
 	void Add(std::string& value);
 	void Delete(std::string& value);
 
+	std::string& GetByIndex(size_t index);
 	bool Exist(std::string& value);
 	void Merge(Set& other);
 	Set Intersect(Set& oher);

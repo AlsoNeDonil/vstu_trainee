@@ -1,12 +1,12 @@
 #include <iostream>
 #include <intrin.h>
 
-#include "Set.h"
+#include "Dict.h"
 
 int main()
 {
-	Set s1({"dima", "mama", "papa"});
-	Set s2({ "dima", "mama", "ded" });
+	Dict s1({"dima", "mama", "papa"});
+	Dict s2({ "dima", "mama", "ded" });
 
 	auto tmp = s2.Intersect(s1);
 
