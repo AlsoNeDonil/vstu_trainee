@@ -2,18 +2,17 @@
 #include <intrin.h>
 
 #include "Translator.h"
+#include "Menu.h"
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 	Translator t("assets/dict.txt");
 
-	std::string sentence1("Brother Mother Dima govno");
-	std::string sentence2("Mother jump in window");
+	std::string sentence1("Brother Mother Dima asshole");
+	std::string sentence2("Nastya jump in window");
 
-	std::cout << t.Translate(sentence1) << std::endl;
-	std::cout << t.Translate(sentence2) << std::endl;
+	Menu::Manage(t);
 
-	system("pause");
 	return 0;
 }

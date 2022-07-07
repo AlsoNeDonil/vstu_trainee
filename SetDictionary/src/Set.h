@@ -10,6 +10,7 @@ public:
 
 	void Add(std::string& value);
 	void Delete(std::string& value);
+	void DeleteAll();
 
 	std::string GetByIndex(size_t index);
 	int GetByWord(std::string& word);

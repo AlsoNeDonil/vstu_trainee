@@ -21,3 +21,7 @@ Bird Птица
 bird птица
 In В
 in в
+Nastya Настя
+Football Футбол
+football футбол
+is это

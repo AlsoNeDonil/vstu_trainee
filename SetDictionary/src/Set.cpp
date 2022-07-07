@@ -23,6 +23,11 @@ void Set::Delete(std::string& value)
 		m_Values.erase(pos);
 }
 
+void Set::DeleteAll()
+{
+	m_Values.clear();
+}
+
 std::string Set::GetByIndex(size_t index)
 {
 	if (index < m_Values.size())

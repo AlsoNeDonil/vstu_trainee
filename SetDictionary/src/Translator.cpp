@@ -13,6 +13,13 @@ Translator::Translator(const std::string& filepath)
 	ParseFromFile(filepath);
 }
 
+bool Translator::ChangeDict(const std::string& filepath)
+{
+	m_FirstLanguage.DeleteAll();
+	m_SecondLanguage.DeleteAll();
+	return ParseFromFile(filepath);
+}
+
 std::string Translator::Translate(std::string& sentence)
 {
 	auto words = SplitWords(sentence);
@@ -49,15 +56,15 @@ std::vector<std::string> Translator::SplitWords(std::string& sentence)
 	return words;
 }
 
-void Translator::ParseFromFile(const std::string& filepath)
+bool Translator::ParseFromFile(const std::string& filepath)
 {
 	std::ifstream ifs(filepath.c_str());
 
 	std::string first;
 	std::string second;
 
-	if (ifs.bad())
-		return;
+	if (ifs.bad() || !ifs)
+		return false;
 
 	std::string line;
 	while (!ifs.eof())
@@ -77,4 +84,6 @@ void Translator::ParseFromFile(const std::string& filepath)
 		}
 
 	}
+
+	return true;
 }
